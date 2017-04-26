@@ -15,8 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'hdpcertified'
-
-include 'hdfs'
-include 'gui-service'
-include 'gui-service-api'
+rootProject.name = 'gui-service-api'

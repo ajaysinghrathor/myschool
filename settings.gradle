@@ -18,3 +18,4 @@ include 'services:webservice'
 rootProject.name = 'hdpcertified'
 
 include 'hdfs'
+include 'gui-service'

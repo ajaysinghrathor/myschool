@@ -1,5 +1,11 @@
+.classpath
+.project
+.settings/
 .git
 .git/*
 .gradle
 .gradle/*
 build/*
+/build/
+/bin/
+bin/

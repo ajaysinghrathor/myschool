@@ -18,7 +18,7 @@ public class Application{
           new JettyEmbeddedServletContainerFactory();
          
         jettyContainer.setPort(2040);
-        jettyContainer.setContextPath("/hdfs");
+        jettyContainer.setContextPath("/api/hdfs");
         return jettyContainer;
     }
 

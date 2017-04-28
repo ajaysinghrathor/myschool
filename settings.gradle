@@ -9,9 +9,9 @@
  */
 
 
-rootProject.name = 'hdpcertified'
+rootProject.name = 'apps'
 
-include 'hdfs'
-include 'gui-service-app'
-include 'gui-service-api'
+include 'service-hdfs'
+include 'app-myschool'
+include 'app-myschool-service-api'
 

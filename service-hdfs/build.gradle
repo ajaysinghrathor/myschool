@@ -1,5 +1,9 @@
 buildscript {
-    ext { springBootVersion = '1.5.2.RELEASE' }
+    ext { 
+    	springBootVersion = '1.5.2.RELEASE'
+    	jersey2Version = '2.19'
+    	jaxrsVersion = '2.0.1' 	
+    }
     repositories { mavenCentral() }
     dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
 }
@@ -9,7 +13,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'service-hdfs-api'
+    baseName = 'gui-service-api'
     version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -17,21 +21,42 @@ sourceCompatibility = 1.8
 repositories { mavenCentral() }
 
 dependencies {
+
     compile("org.springframework.boot:spring-boot-starter-web") {
         exclude module: "spring-boot-starter-tomcat"
     }
+    compile("org.springframework.boot:spring-boot-starter-logging") {
+        exclude module: "org.slf4j:slf4j-api:1.7.22"
+        exclude module: "ch.qos.logback:logback-classic:1.1.11"
+    }
     compile("org.springframework.boot:spring-boot-starter-jetty")
     
-    //compile("com.practice:ecomm")
-   
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}")
-    //compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-starter-jetty")
-    
+    compile("org.springframework.boot:spring-boot-starter-jersey")    
     compile("org.springframework.boot:spring-boot-devtools")
-        
-        
+	
+	
+	
+	compile("com.sun.jersey:jersey-client:${jersey2Version}")
+	compile("org.glassfish.jersey.containers:jersey-container-servlet:${jersey2Version}")
+	compile("org.glassfish.jersey.core:jersey-server:${jersey2Version}")
+	compile("org.glassfish.jersey.core:jersey-client:${jersey2Version}")
+	
+	compile("javax.ws.rs:javax.ws.rs-api:${jaxrsVersion}")
+	
+	
+	
+	compile 'io.swagger:swagger-jersey2-jaxrs:1.5.3'
+	   
+	
+	
+	//----HADOOP Dependencies---------------
+    compile "org.apache.hadoop:hadoop-common:2.7.3"
+    compile "org.apache.hadoop:hadoop-hdfs:2.7.3"
+    compile "org.apache.hadoop:hadoop-client:2.7.3"
+    compile "org.apache.hadoop:hadoop-auth:2.7.3"
     
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("junit:junit")

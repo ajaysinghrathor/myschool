@@ -26,11 +26,12 @@ dependencies {
    
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}")
-    //compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-starter-jetty")
     
     compile("org.springframework.boot:spring-boot-devtools")
-        
+	
+	compile 'io.swagger:swagger-jersey2-jaxrs:1.5.3'
+	compile "org.springframework.boot:spring-boot-starter-jersey"        
         
     
     testCompile("org.springframework.boot:spring-boot-starter-test")

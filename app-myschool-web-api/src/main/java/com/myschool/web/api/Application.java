@@ -1,4 +1,4 @@
-package com.myschool.gui.api;
+package com.myschool.web.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +18,7 @@ public class Application{
           new JettyEmbeddedServletContainerFactory();
          
         jettyContainer.setPort(2030);
-        jettyContainer.setContextPath("/api/myschool");
+        jettyContainer.setContextPath("/api/myschool/web");
         return jettyContainer;
     }
 

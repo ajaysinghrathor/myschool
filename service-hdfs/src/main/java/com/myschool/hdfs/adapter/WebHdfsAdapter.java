@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.myschool.hdfs.adapter.model.FileStatus;
+import com.myschool.hdfs.adapter.model.FileStatusProperties;
 
 
 public class WebHdfsAdapter {
@@ -25,8 +25,8 @@ public class WebHdfsAdapter {
 		log.info(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(fileStatus));*/
 	}
 	
-	public FileStatus getFileStatus() {
-		FileStatus fileStatus = new FileStatus();
+	public FileStatusProperties getFileStatus() {
+		FileStatusProperties fileStatus = new FileStatusProperties();
 		String url = "http://master:50070/webhdfs/v1/tmp?user.name=hduser&op=GETFILESTATUS";
 		String response = "";//JerseyClient.invokeGet(url);
 		log.info(response);

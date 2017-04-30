@@ -56,6 +56,4 @@ public class SampleWebHdfsClient {
 			log.info(fsStatus[i].getPath().toString());
 		}
 	}
-	
-
 }
